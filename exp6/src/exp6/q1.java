@@ -67,6 +67,10 @@ public class q1 {
         }
     }
 
+    static void print(Object o) {
+        System.out.println(o);
+    }
+
     public static void main(String[] args) {
 
         // create objects
@@ -82,20 +86,20 @@ public class q1 {
         ce.commissionRate = 0.1;
 
         bce.fname = "John";
-        bce.lname = "Doe";
+        bce.lname = "Cena";
         bce.ssn = "123456789";
         bce.grossSales = 1000;
         bce.commissionRate = 0.1;
         bce.baseSalary = 100;
 
         // print values
-        System.out.println("Commission Employee");
-        System.out.println("Name: " + ce.fname + " " + ce.lname);
-        System.out.println("Payment Amount: " + ce.getPaymentAmount());
+        print("Commission Employee:");
+        print("Name: " + ce.fname + " " + ce.lname);
+        print("Payment Amount: " + ce.getPaymentAmount());
 
-        System.out.println("Base Plus Commission Employee");
-        System.out.println("Name: " + bce.fname + " " + bce.lname);
-        System.out.println("Payment Amount: " + bce.getPaymentAmount());
+        print("Base Plus Commission Employee:");
+        print("Name: " + bce.fname + " " + bce.lname);
+        print("Payment Amount: " + bce.getPaymentAmount());
 
     }
 }
