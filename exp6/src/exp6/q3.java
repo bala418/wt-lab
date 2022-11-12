@@ -6,8 +6,6 @@ public class q3 {
         int year;
         int edition;
         double price;
-
-        // function
         public double getPrice() {
             return price;
         }

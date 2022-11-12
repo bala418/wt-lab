@@ -34,6 +34,7 @@ public class q2 {
 
         System.out.println("Enter the balance: ");
         int balance = sc.nextInt();
+        e.calculate();
 
         if (balance < (e.emi * 3 * 12)) {
             try {
@@ -42,7 +43,7 @@ public class q2 {
                 System.out.println(nbe.getMessage());
             }
         } else {
-            e.calculate();
+            System.out.println("EMI can be paid");
         }
 
     }

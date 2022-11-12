@@ -1,8 +1,6 @@
 package exp1;
 
 public class q3 {
-
-    // check for palindrome
     public static boolean isPalindrome(int n) {
         int temp = n;
         int rev = 0;
@@ -17,7 +15,6 @@ public class q3 {
             return false;
         }
     }
-
     public static void main(String[] args) {
         int num1 = 121;
         int num2 = 123;

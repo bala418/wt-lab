@@ -22,7 +22,7 @@ class UDPCHATClient {
             // convert to upper case
             str = str.toUpperCase();
             buf = str.getBytes();
-            if (str.equals("bye")) {
+            if (str.equals("BYE")) {
                 System.out.println("Terminated...");
                 clientsocket.send(new DatagramPacket(buf, str.length(), ia, sport));
                 break;

@@ -1,5 +1,3 @@
-package exp5;
-
 public class q3 {
 
     static class vehicle {

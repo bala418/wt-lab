@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class q1 {
     public static void main(String[] args) {
-        // program to implement a calculator
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         double num1, num2, result = 0;

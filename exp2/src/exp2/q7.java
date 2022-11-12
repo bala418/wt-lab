@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class q7 {
     public static void main(String[] args) {
-        // get array input
         Scanner sc = new Scanner(System.in);
         int n;
         System.out.print("Enter length of array: ");
@@ -15,15 +14,14 @@ public class q7 {
             arr[i] = sc.nextInt();
         }
 
-        // copy subset of array using System.arraycopy
         System.out.println("Enter start and end index of subset: ");
         int start = sc.nextInt();
         int end = sc.nextInt();
 
         int subset[] = new int[end - start + 1];
         System.arraycopy(arr, start, subset, 0, end - start + 1);
+        System.arraycopy(, start, end, start, end);
 
-        // print subset
         System.out.println("Subset of array: ");
         for (int i = 0; i < end - start + 1; i++) {
             System.out.print(subset[i] + " ");

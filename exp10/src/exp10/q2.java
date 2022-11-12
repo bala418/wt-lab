@@ -1,10 +1,8 @@
 package exp10;
 
-// thread sleep library
 import java.lang.Thread;
 
 public class q2 {
-    // create 5 threads with different priorities
     public static void main(String[] args) {
         Thread t1 = new Thread(new Runnable() {
             @Override

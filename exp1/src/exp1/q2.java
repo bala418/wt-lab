@@ -2,7 +2,6 @@ package exp1;
 
 public class q2 {
 
-    // function to check if the number is prime or not
     public static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
@@ -17,7 +16,6 @@ public class q2 {
     }
 
     public static void main(String[] args) {
-        // check for prime number
         int x = 7;
         int y = 9;
         if (isPrime(x)) {

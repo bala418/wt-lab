@@ -4,10 +4,6 @@
  */
 package exp1;
 
-/**
- *
- * @author bala9
- */
 public class q1 {
     public static void main(String[] args) {
         int a = 0, b = 1;

@@ -5,7 +5,6 @@ package exp3;
 * @author student
 */
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class q6 {

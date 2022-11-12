@@ -1,11 +1,8 @@
 public class q1 {
-
-    // interface payable
     interface payable {
         double getPaymentAmount();
     }
 
-    // employee class
     static class Employee implements payable {
         String fname;
         String lname;
@@ -16,7 +13,6 @@ public class q1 {
         }
     }
 
-    // invoice class
     static class Invoice implements payable {
         String partNumber;
         String partDescription;
@@ -28,7 +24,6 @@ public class q1 {
         }
     }
 
-    // commission employee class
     static class CommissionEmployee extends Employee {
         double grossSales;
         double commissionRate;
@@ -39,7 +34,6 @@ public class q1 {
 
     }
 
-    // hourly employee class
     static class HourlyEmployee extends Employee {
         double wage;
         double hours;
@@ -49,7 +43,6 @@ public class q1 {
         }
     }
 
-    // weekly employee class
     static class WeeklyEmployee extends Employee {
         double salary;
 
@@ -58,7 +51,6 @@ public class q1 {
         }
     }
 
-    // base plus commission employee class
     static class BasePlusCommissionEmployee extends CommissionEmployee {
         double baseSalary;
 
@@ -73,11 +65,8 @@ public class q1 {
 
     public static void main(String[] args) {
 
-        // create objects
         CommissionEmployee ce = new CommissionEmployee();
         BasePlusCommissionEmployee bce = new BasePlusCommissionEmployee();
-
-        // set values
 
         ce.fname = "Jane";
         ce.lname = "Doe";
@@ -92,7 +81,6 @@ public class q1 {
         bce.commissionRate = 0.1;
         bce.baseSalary = 100;
 
-        // print values
         print("Commission Employee:");
         print("Name: " + ce.fname + " " + ce.lname);
         print("Payment Amount: " + ce.getPaymentAmount());

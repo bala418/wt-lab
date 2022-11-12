@@ -10,3 +10,9 @@ docs/
 /exp8/nbproject/private/
 /exp9/nbproject/private/
 /exp10/nbproject/private/
+/exp11/nbproject/private/
+nbproject/
+build.xml
+manifest.mf
+record/misc
+record/others

@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class q6 {
 
     static void matrix_add() {
-        // matrix addition
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of matrix: ");
         int n = sc.nextInt();
@@ -40,7 +39,6 @@ public class q6 {
     }
 
     static void matrix_multiply() {
-        // matrix multiplication
         Scanner sc = new Scanner(System.in);
         int n, m;
         int mat1[][];
@@ -90,7 +88,6 @@ public class q6 {
     }
 
     static void transpose() {
-        // transpose of matrix
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter size of matrix: ");
         int n = sc.nextInt();

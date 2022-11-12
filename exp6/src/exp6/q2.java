@@ -1,10 +1,7 @@
 public class q2 {
-    // abstract class marks
     abstract static class Marks {
         abstract double getPercentage();
     }
-
-    // class A
     static class A extends Marks {
         double m1, m2, m3;
 
@@ -18,8 +15,6 @@ public class q2 {
             return (m1 + m2 + m3) / 3;
         }
     }
-
-    // class B
     static class B extends Marks {
         double m1, m2, m3, m4;
 

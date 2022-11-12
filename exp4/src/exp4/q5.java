@@ -2,9 +2,7 @@ package exp4;
 
 public class q5 {
 
-    // library management system using static methods, blocks and variables
     static int bookCount = 0;
-    // array of books
     static String[] books = new String[10];
 
     static {

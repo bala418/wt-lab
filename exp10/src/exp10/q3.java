@@ -1,9 +1,5 @@
 package exp10;
-
-// . First thread generates random integer every 1 second and if the value is even,
-// second thread computes the square of the number and prints. If the value is odd, the
-// thread will print the value of the number
-
+import java.util.*;
 public class q3 {
 
     static class SquareThread extends Thread {

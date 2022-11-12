@@ -13,10 +13,7 @@ public class q5 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        // in built function to sort array
         Arrays.sort(arr);
-        // print sorted array
-
         System.out.println("3rd smallest element: " + arr[2]);
         System.out.println("5th largest element: " + arr[n - 3]);
 

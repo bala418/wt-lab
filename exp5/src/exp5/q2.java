@@ -1,9 +1,4 @@
-package exp5;
-
 public class q2 {
-
-    // country, state, city, village heirarchy
-
     static class country {
         country() {
             System.out.println("Country");

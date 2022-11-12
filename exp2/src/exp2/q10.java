@@ -3,7 +3,6 @@ package exp2;
 import java.util.Scanner;
 
 public class q10 {
-
     static class Book {
         String name;
         String author;
@@ -28,7 +27,7 @@ public class q10 {
     static Book[] books = new Book[10];
     static int count = 0;
 
-    static void insertBook() {
+    void insertBook() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name, author, price and pages: ");
         String name = sc.nextLine();
@@ -61,6 +60,7 @@ public class q10 {
     }
 
     public static void main(String[] args) {
+        q1 q = new q1();
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -73,7 +73,7 @@ public class q10 {
 
             switch (choice) {
                 case 1:
-                    insertBook();
+                    q.insertBook();
                     break;
                 case 2:
                     deleteBook();

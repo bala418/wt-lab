@@ -3,8 +3,6 @@ package exp2;
 import java.util.Scanner;
 
 public class q8 {
-
-    // return factorial
     static int factorial(int n) {
         if (n == 0)
             return 1;
@@ -16,11 +14,8 @@ public class q8 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter n and r: ");
-
         int n = sc.nextInt();
         int r = sc.nextInt();
-
-        // calculate nCr
         int nCr = factorial(n) / (factorial(r) * factorial(n - r));
         System.out.println("nCr: " + nCr);
 

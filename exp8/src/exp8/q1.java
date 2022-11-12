@@ -2,7 +2,6 @@ package exp8;
 
 import java.util.*;
 import java.io.*;
-import java.util.*;
 
 public class q1 {
 
