@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- a list of few products with name and type -->
+
+    <div>
+      <h3>Dove</h3>
+      <p>Soap</p>
+      <p>1</p>
+      <!-- input type hidden -->
+      <button>view</button>
+    </div>
+    <div>
+      <h3>Colgate</h3>
+      <p>Toothbrush</p>
+      <p>2</p>
+      <button>view</button>
+    </div>
+    <div>
+      <h3>Duracell</h3>
+      <p>Battery</p>
+      <p>3</p>
+      <button>view</button>
+    </div>
+  </body>
+  <script>
+    // store detail in an object and save to localstorage
+    const products = [
+      {
+        name: "Dove",
+        type: "Soap",
+        id: 1,
+        price: 20,
+      },
+      {
+        name: "Colgate",
+        type: "Toothbrush",
+        id: 2,
+        price: 30,
+      },
+      {
+        name: "Duracell",
+        type: "Battery",
+        id: 3,
+        price: 40,
+      },
+    ];
+    localStorage.setItem("products", JSON.stringify(products));
+
+    // when product is clicked, go to product detail page
+    const product = document.querySelectorAll("div");
+    product.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const id = e.target.parentElement.children[2].innerText;
+        window.location.href = `product.html?id=${id}`;
+      });
+    });
+  </script>
+</html>

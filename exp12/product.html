@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- print details of product id passed in parameter -->
+
+    <div>
+      <h3 id="title"></h3>
+      <p id="id"></p>
+      <p id="price"></p>
+      <p id="type"></p>
+      <button id="+">+</button>
+      <button id="-">-</button>
+      <button id="add">Add to cart</button>
+      <p id="total"></p>
+    </div>
+  </body>
+
+  <script>
+    // get product id from url
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    // get product from localstorage
+    const products = JSON.parse(localStorage.getItem("products"));
+    const product = products.find((item) => item.id == id);
+    // print product details
+    document.getElementById("title").innerText = product.name;
+    document.getElementById("id").innerText = product.id;
+    document.getElementById("price").innerText = product.price;
+    document.getElementById("type").innerText = product.type;
+    // add to cart
+    let count = 0;
+    document.getElementById("+").addEventListener("click", () => {
+      count += product.price;
+      document.getElementById("total").innerText = count;
+    });
+    document.getElementById("-").addEventListener("click", () => {
+      count -= product.price;
+      document.getElementById("total").innerText = count;
+    });
+    document.getElementById("add").addEventListener("click", () => {
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      cart.push({
+        id: product.id,
+        count: count,
+      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      //   go to catalog.html
+      window.location.href = "catalog.html";
+    });
+  </script>
+</html>
