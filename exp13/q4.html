@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamically Append a Div Content to Body</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("body").on("click", function () {
+          $("<div><p>I am a paragraph.</p></div>").appendTo("body");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Body Content</h1>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 - Restaurant Menu</title>
+    <style>
+        html, body * { margin: 0; padding: 0; box-sizing: border-box;}
+        .container { width: 100%; }
+        .menu-container { padding: 8px; border: 2px solid black; }
+        .food-container { padding: 16px; }
+        .food-container .name           { font-weight: bold; }
+        .food-container .price          { color: teal; }
+        .food-container .description    { margin: 8px; }
+    </style>
+</head>
+<body onload="render()">
+    <div id="main"></div>
+    <!--
+        section(boilerplate)    BoilerpLate code for gene
+        <div class="container menu-container">
+            <div class="container food-container">
+                <div class="name"></div>
+                <div class="price"></div>
+                <div class="description"></div>
+            </div>
+        </div>
+        endsection(bolierplate)
+    -->
+    <script>
+        function fetchXML(path, callback) {
+            var xmlHTTP = new XMLHttpRequest();
+            xmlHTTP.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200)
+                    if(callback) callback(this.responseXML)
+            }
+            xmlHTTP.open("GET", path, true);
+            xmlHTTP.send();
+        }
+
+        function render() {
+           
+            fetchXML("RestaurantMenu.xml", (menu) => {
+                renderedHTML = `<div class="container">`
+                
+                    for(var menu_entry of menu.getElementsByTagName("menu")) {
+                    renderedHTML += `<div class="container menu-container">`
+                    for(var food of menu_entry.getElementsByTagName("food")) {
+                        renderedHTML += `<div class="container food-container">`
+                        renderedHTML += `    <div class="name">${food.getElementsByTagName("name")[0].childNodes[0].nodeValue}</div>`
+                        renderedHTML += `    <div class="description">${food.getElementsByTagName("description")[0].childNodes[0].nodeValue}</div>`
+                        renderedHTML += `    <div class="price">${food.getElementsByTagName("price")[0].childNodes[0].nodeValue}</div>`
+                        renderedHTML += `</div>`
+                    }
+                    renderedHTML += `</div>`;
+                }
+                        
+                renderedHTML += `</div>`
+                console.log(renderedHTML);
+                document.getElementById("main").innerHTML = renderedHTML;
+            })
+        }
+    </script>
+</body>
+</html>

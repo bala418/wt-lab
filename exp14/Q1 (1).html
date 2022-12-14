@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 - AJAX JSON</title>
+    <style>
+        html, body * { margin: 0; padding: 0; box-sizing: border-box;}
+        .container { width: 100%; }
+        .subject-container { padding: 8px; border: 2px solid black; }
+        .question-container { padding: 16px; }
+        .question-container .question { font-weight: bold; }
+        .question-container .options-container { margin-left: 16px; }
+        .question-container .answer { margin: 8px; color: lightseagreen; font-size: medium; font-weight: bold;  }
+    </style>
+</head>
+<body onload="render()">
+    <div id="main"></div>
+    <script>
+        function fetchJSONFile(path, callback) {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === 4) {
+                    if (httpRequest.status === 200) {
+                        var questionPaper = JSON.parse(httpRequest.responseText);
+                        if(callback) callback(questionPaper)
+                    }
+                }
+            };
+            httpRequest.open('GET', path);
+            httpRequest.send(); 
+        }
+
+        function render() {
+            fetchJSONFile("QuestionPaper.json", (questionPaper) => {
+                var renderedHTML = "<div class='container'>"
+                for(var quiz of Object.keys(questionPaper.quiz)) {
+                    renderedHTML +=     "<div class='container subject-container'>"
+                    renderedHTML +=     `    <div class='subject'>Subject: ${quiz}</div>`
+                    for(var questionNumber of Object.keys(questionPaper.quiz[quiz])) {
+                        var question = questionPaper.quiz[quiz][questionNumber];
+                        if(questionNumber == "status") continue;
+                        renderedHTML +=         `<div class='container question-container'>`
+                        renderedHTML +=             `<div class="question">Question: ${question.question}</div>`
+                        renderedHTML +=             `Options:` 
+                        renderedHTML +=             `<div class="options-container">`
+                        for(var option in question.options)
+                            renderedHTML +=             `<div class="option">${Number.parseInt(option) + 1}. ${question.options[option]}</div>`
+                        renderedHTML +=             `</div>`
+                        renderedHTML +=             `<div class="answer">Answer: ${question.answer}</div>`
+                        renderedHTML +=         `</div>`
+                    }
+                    renderedHTML +=     "</div>"
+                }
+                renderedHTML     += "</div>"
+                console.log(renderedHTML)
+                document.getElementById("main").innerHTML = renderedHTML;
+            })
+        }
+    </script>
+</body>
+</html>

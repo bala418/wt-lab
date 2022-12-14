@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Color On Focus and Off Focus</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .in {
+        background: green;
+      }
+      .out {
+        background: red;
+      }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("div").focusin(function () {
+          $(this).attr("class", "in");
+        });
+        $("div").focusout(function () {
+          $(this).attr("class", "out");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      Student Name <input type="text" /><br />
+      Register Number <input type="number" />
+    </div>
+  </body>
+</html>

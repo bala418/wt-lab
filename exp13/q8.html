@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               $("#add").on("click", function(){
+                   $("#tableBody").append("<tr><td>" + $("#name").val() + "</td><td id='rat'>" + $("#rating").val() + "</td><td><button id='del'> Delete </button></td></tr>");
+               });
+               $('table').on("click", "#del",function(){
+                   $(this).parents('tr').remove();
+               });
+               $("#sortByName").on("click",  function (){
+                   $("#tableBody").find("tr").sort(function(a, b){
+                       return $('td:first', a).text().localeCompare($('td:first', b).text());
+                   }).appendTo($("#tableBody"));
+               });
+               $('#sortByRating').on("click", function(){
+                   $("#tableBody").find("tr").sort(function(a, b){
+                       return $('td:eq(1)', a).text().localeCompare($('td:eq(1)', b).text(),'en', {numeric: true});
+                   }).appendTo($("#tableBody"));
+               });
+            });
+        </script>
+        <style>
+            table, th, td{
+                border: 1px black;
+                border-collapse: collapse;
+            }
+            th, td {
+                background-color: #96D4D4;
+            }
+        </style>
+    </head>
+    <body>
+    <forms method="post">
+        Player <input type="text" id="name"><br>
+        Rating <input type="number" id="rating"><br>
+        <button id="add"> Add </button>
+    </forms>
+
+    <br>
+    <button id="sortByName"> Sort Table By Name </button>
+    <button id="sortByRating"> Sort Table By Rating </button>
+    <br>
+
+
+    <table style="margin-left: auto; margin-right: auto;">
+        <thead>
+            <th> Player </th>
+            <th> Rating </th>
+            <th> Delete </th>
+        </thead>
+        <tbody id = "tableBody">
+
+        </tbody>
+    </table>
+    
+    </body>
+</html>
