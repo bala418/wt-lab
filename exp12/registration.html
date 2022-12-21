@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style></style>
-  </head>
+  <head> </head>
   <body>
-    <form action="" method="post">
+    <form action="" method="post" id="form1">
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" />
+      <input type="text" id="name" />
       <label for="email">Email</label>
       <input type="email" name="email" id="email" />
       <label for="password">Password</label>
@@ -18,9 +12,8 @@
       <input type="submit" value="Register" />
     </form>
   </body>
-  <!-- store name, email and password in localstorage -->
   <script>
-    const form = document.querySelector("form");
+    const form = document.querySelector("form1");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = document.querySelector("#name").value;

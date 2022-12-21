@@ -18,6 +18,7 @@ public class q2 {
     public static void main(String[] args) {
         int x = 7;
         int y = 9;
+        
         if (isPrime(x)) {
             System.out.println(x + " is a prime number");
         } else {

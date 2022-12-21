@@ -17,7 +17,7 @@ public class q10 {
         }
 
         void display() {
-            System.out.println("Name: " + name);
+            System.out.println("Name: " + this.name);
             System.out.println("Author: " + author);
             System.out.println("Price: " + price);
             System.out.println("Pages: " + pages);
@@ -27,7 +27,7 @@ public class q10 {
     static Book[] books = new Book[10];
     static int count = 0;
 
-    void insertBook() {
+    public void insertBook() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name, author, price and pages: ");
         String name = sc.nextLine();
@@ -47,7 +47,13 @@ public class q10 {
                 for (int j = i; j < count - 1; j++) {
                     books[j] = books[j + 1];
                 }
+                // 1 2 3 4 5 6
+                // 1 2 4 4 5 6
+                // 1 2 4 5 5 6
+                // 1 2 4 5 6 6
                 count--;
+                // 1 2 4 5 6
+
                 break;
             }
         }
@@ -60,7 +66,7 @@ public class q10 {
     }
 
     public static void main(String[] args) {
-        q1 q = new q1();
+        q10 q = new q10();
         Scanner sc = new Scanner(System.in);
 
         while (true) {

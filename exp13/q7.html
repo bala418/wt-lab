@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Text box to Button</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-               $("button").on("click", function(){
-                   $(this).html($("input").val());
-               });
-            });
-        </script>
-    </head>
-    <body>
-        Input <input type="text">
-        <br>
-        <button>Click Me</button>
-    </body>
+  <head>
+    <script src="jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").on("click", function () {
+          $(this).html($("input").val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Input <input type="text" />
+    <br />
+    <button>Click Me</button>
+  </body>
 </html>

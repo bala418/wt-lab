@@ -27,6 +27,7 @@ public class q4 {
 
         boolean validateName() {
             // ends with _job
+            // b_job, abc_job, abc123_job
             return Pattern.matches("^.+_job$", name);
         }
 

@@ -1,5 +1,6 @@
 package exp10;
 
+import java.io.IOException;
 import java.lang.Thread;
 
 public class q2 {
@@ -67,7 +68,7 @@ public class q2 {
                     System.out.println("Maintain Social Distancing");
                     try {
                         Thread.sleep(9000);
-                    } catch (InterruptedException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }

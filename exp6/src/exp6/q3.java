@@ -6,6 +6,7 @@ public class q3 {
         int year;
         int edition;
         double price;
+
         public double getPrice() {
             return price;
         }
@@ -30,8 +31,8 @@ public class q3 {
         }
     }
 
-    static void print(Object o) {
-        System.out.println(o);
+    static void print(Object s) {
+        System.out.println(s);
     }
 
     static void print(OnlineBook o) {
@@ -63,6 +64,7 @@ public class q3 {
         TechBook tb = (TechBook) ob;
         tb.language = "Java";
         tb.framework = "Spring";
+        tb.price = 1000;
 
         print(tb);
         print("");

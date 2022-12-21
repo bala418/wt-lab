@@ -31,7 +31,6 @@
             httpRequest.open('GET', path);
             httpRequest.send(); 
         }
-
         function render() {
             fetchJSONFile("QuestionPaper.json", (questionPaper) => {
                 var renderedHTML = "<div class='container'>"

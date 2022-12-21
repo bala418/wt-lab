@@ -20,7 +20,6 @@ public class q7 {
 
         int subset[] = new int[end - start + 1];
         System.arraycopy(arr, start, subset, 0, end - start + 1);
-        System.arraycopy(, start, end, start, end);
 
         System.out.println("Subset of array: ");
         for (int i = 0; i < end - start + 1; i++) {

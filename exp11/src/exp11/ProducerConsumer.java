@@ -38,7 +38,7 @@ class Thread2 extends Thread {
 
 public class ProducerConsumer {
     public static void main(String[] args) throws InterruptedException {
-        final PC pc = new PC();
+        PC pc = new PC();
         Thread1 t1 = new Thread1(pc);
         Thread2 t2 = new Thread2(pc);
 
@@ -65,7 +65,6 @@ class PC {
         Thread.sleep(1000);
         if (st.size() == 0)
             wait();
-        Scanner s = new Scanner(System.in);
         synchronized (this) {
             System.out.println("Stock consumed: " + st.pop());
             notify();

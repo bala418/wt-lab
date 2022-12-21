@@ -15,7 +15,7 @@ public class q5 {
         }
         Arrays.sort(arr);
         System.out.println("3rd smallest element: " + arr[2]);
-        System.out.println("5th largest element: " + arr[n - 3]);
+        System.out.println("5th largest element: " + arr[n - 5]);
 
         sc.close();
     }

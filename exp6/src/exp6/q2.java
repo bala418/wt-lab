@@ -1,7 +1,12 @@
 public class q2 {
     abstract static class Marks {
         abstract double getPercentage();
+
+        void fun() {
+            System.out.println("GHi");
+        }
     }
+
     static class A extends Marks {
         double m1, m2, m3;
 
@@ -15,6 +20,7 @@ public class q2 {
             return (m1 + m2 + m3) / 3;
         }
     }
+
     static class B extends Marks {
         double m1, m2, m3, m4;
 

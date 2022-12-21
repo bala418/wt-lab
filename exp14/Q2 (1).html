@@ -17,17 +17,6 @@
 </head>
 <body onload="render()">
     <div id="main"></div>
-    <!--
-        section(boilerplate)    BoilerpLate code for gene
-        <div class="container menu-container">
-            <div class="container food-container">
-                <div class="name"></div>
-                <div class="price"></div>
-                <div class="description"></div>
-            </div>
-        </div>
-        endsection(bolierplate)
-    -->
     <script>
         function fetchXML(path, callback) {
             var xmlHTTP = new XMLHttpRequest();
@@ -38,12 +27,9 @@
             xmlHTTP.open("GET", path, true);
             xmlHTTP.send();
         }
-
         function render() {
-           
             fetchXML("RestaurantMenu.xml", (menu) => {
                 renderedHTML = `<div class="container">`
-                
                     for(var menu_entry of menu.getElementsByTagName("menu")) {
                     renderedHTML += `<div class="container menu-container">`
                     for(var food of menu_entry.getElementsByTagName("food")) {
@@ -55,7 +41,6 @@
                     }
                     renderedHTML += `</div>`;
                 }
-                        
                 renderedHTML += `</div>`
                 console.log(renderedHTML);
                 document.getElementById("main").innerHTML = renderedHTML;

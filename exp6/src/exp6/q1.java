@@ -1,6 +1,7 @@
 public class q1 {
     interface payable {
         double getPaymentAmount();
+
     }
 
     static class Employee implements payable {
@@ -55,6 +56,7 @@ public class q1 {
         double baseSalary;
 
         public double getPaymentAmount() {
+
             return baseSalary + super.getPaymentAmount();
         }
     }

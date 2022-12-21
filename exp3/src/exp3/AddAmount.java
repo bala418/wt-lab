@@ -22,6 +22,7 @@ public class AddAmount {
         System.out.println("Using parameterized constructor");
         AddAmount y = new AddAmount(20);
 
+
     }
 
 }
